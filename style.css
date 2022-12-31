@@ -1,0 +1,156 @@
+/*Followed tutorial at https://www.youtube.com/watch?v=7dvNcQCDM9M&t=1255s*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.disk {
+  position: absolute;
+  width: 40vmin;
+  height: 42vmin;
+  background: #000;
+  border-radius: 3%;
+  clip-path: polygon(80% 0, 100% 15%, 100% 100%, 0 100%, 0 0);
+}
+
+.diskwrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(1vmin 1vmin 1vmin #a19882);
+  border-bottom-right-radius: 3%;
+}
+
+.disk::before {
+  content: "";
+  position: absolute;
+  background-image: url(https://media.istockphoto.com/id/1072135052/photo/grainy-grey-texture-with-fade-light-effect.jpg?s=170667a&w=0&k=20&c=WxIGjDrY-J-ToMMjuIBPpG_i2Kzb5e1tFBgfEsN0yGk=);
+  width: 24vmin;
+  height: 13.5vmin;
+  right: 11vmin;
+  opacity: 0.35;
+  background: #000;
+  z-index: 1;
+}
+
+.disk::after {
+  content: "";
+  position: fixed;
+  background-image: url(https://media.istockphoto.com/id/1072135052/photo/grainy-grey-texture-with-fade-light-effect.jpg?s=170667a&w=0&k=20&c=WxIGjDrY-J-ToMMjuIBPpG_i2Kzb5e1tFBgfEsN0yGk=);
+  width: 40vmin;
+  height: 42vmin;
+  opacity: 0.35;
+  border-radius: 3%;
+}
+
+.chip {
+  position: absolute;
+  right: 12vmin;
+  width: 18vmin;
+  height: 13vmin;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(220, 220, 220, 1) 79%
+  );
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  z-index: 1;
+}
+
+.chip::before {
+  content: "";
+  position: absolute;
+  width: 5.5vmin;
+  height: 10.5vmin;
+  background: #000;
+  top: 1.5vmin;
+  right: 3vmin;
+  opacity: 0.9;
+  border-radius: 3%;
+}
+
+.arrow {
+  position: absolute;
+  background: #000;
+  width: 3vmin;
+  height: 4vmin;
+  z-index: 1;
+  top: 2.5vmin;
+  left: 1.25vmin;
+  clip-path: polygon(
+    100% 43%,
+    73% 42%,
+    73% 100%,
+    28% 100%,
+    28% 42%,
+    0 43%,
+    51% 0
+  );
+}
+
+.note {
+  position: absolute;
+  background: #fff;
+  width: 30vmin;
+  height: 21vmin;
+  bottom: 4vmin;
+  left: 5vmin;
+  border-radius: 5%;
+  z-index: 1;
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background: #ce1212;
+  width: 30vmin;
+  height: 5vmin;
+}
+
+.note::after {
+  content: "";
+  position: absolute;
+  background: #ce1212;
+  width: 28vmin;
+  height: 0.25vmin;
+  bottom: 8vmin;
+  left: 1vmin;
+  box-shadow: 0 -3.5vmin 0 #ce1212, 0 -6.5vmin 0 #ce1212, 0 -9.5vmin 0 #ce1212;
+}
+
+.holes {
+  position: absolute;
+  background: #fff;
+  width: 2vmin;
+  height: 1.5vmin;
+  bottom: 8vmin;
+  left: 1vmin;
+  box-shadow: inset 0.1vmin 0.5vmin 1vmin #000;
+}
+
+.holes::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 2vmin;
+  height: 1.5vmin;
+  bottom: 0vmin;
+  right: -35vmin;
+  box-shadow: inset 0.1vmin 0.5vmin 1vmin #000;
+}
